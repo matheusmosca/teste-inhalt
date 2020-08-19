@@ -1,0 +1,20 @@
+@import "../../../assets/styles/variables.scss";
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    margin-bottom: .35em;
+    font-weight: bold;
+  }
+
+  .form-input {
+    width: 340px;
+    padding: 1em;
+    border-radius: .4em;
+    border: none;
+    background-color: $grayForInputs;
+  }
+
+}

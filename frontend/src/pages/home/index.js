@@ -5,7 +5,7 @@ import '../../assets/styles/global.scss';
 import './home.scss';
 
 import { Header } from '../../components/layout/header';
-import { MainButton } from '../../components/layout/mainButton/MainButton';
+import { MainButton } from '../../components/layout/mainButton';
 
 export function Home() {
   return (
@@ -21,7 +21,7 @@ export function Home() {
                 <MainButton buttonText="Criar conta"/>
               </Link>
               <Link to="/signin">
-                <MainButton buttonText="Login"/>
+                <MainButton buttonText="Fazer login"/>
               </Link>
             </div>
           </div>
