@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import '../../../assets/styles/global.scss';
-import './styles.scss';
+import './header.scss';
 
 export function Header() {
   return (
