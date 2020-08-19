@@ -1,0 +1,13 @@
+@import '../../assets/styles/variables.scss';
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  widows: 100%;
+  height: calc(100vh - 105px);
+
+  .signin-form-container {
+    margin-bottom: 105px;
+  }
+}
