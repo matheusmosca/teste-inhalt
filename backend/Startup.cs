@@ -18,6 +18,7 @@ using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 using UserApi.Models;
+using backend.Models;
 
 namespace backend
 {
@@ -33,8 +34,12 @@ namespace backend
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<UserContext>(opt =>
-               opt.UseInMemoryDatabase("Users"));
+            services.AddDbContext<UserContext>(opt => opt.UseInMemoryDatabase("Users"));
+            services.AddScoped<UserContext, UserContext>();   
+
+            services.AddDbContext<DataContext>(opt => opt.UseInMemoryDatabase("Database"));   
+            services.AddScoped<DataContext, DataContext>();   
+            
             services.AddControllers();
 
             var key = Encoding.ASCII.GetBytes(Settings.Secret);
