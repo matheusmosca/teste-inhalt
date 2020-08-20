@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import { api } from '../../../services/api';
 
@@ -13,6 +13,7 @@ export function SignUpForm() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
+  let history = useHistory();
 
   async function handleSignUpForm(e) {
     e.preventDefault();
@@ -20,13 +21,16 @@ export function SignUpForm() {
       alert("As senhas não coincidem. Tente novamente.")
       return;
     }
+    console.log(username, password)
     try {
       const response = await api.post('/Users', {
         username,
         password
       });
 
-      alert("Sua conta foi criada com sucesso")
+      console.log(response)
+      alert("Sua conta foi criada com sucesso. Realize o login")
+      history.push("/signin")
       return response
     } catch(error) {
       console.log(error)
@@ -36,7 +40,7 @@ export function SignUpForm() {
 
   return (
     <div className="signup-form-container">
-      <form onSubmit={ (e) => handleSignUpForm(e) } action="" className="signup-form-content">
+      <form onSubmit={ async (e) => handleSignUpForm(e) } action="" className="signup-form-content">
         <h4>Criar conta</h4>
         <MainInput required={ true } saveInputValue={ setUsername } inputType="text" labelName="Username"/>
         <MainInput required={ true } saveInputValue={ setPassword } inputType="password" labelName="Senha"/>
@@ -46,9 +50,7 @@ export function SignUpForm() {
             Já tem um cadastro? <Link to="/signin"><span>Logar</span></Link>
           </div>
         </div>
-        <Link to="/signin">
-          <MainButton buttonText="Criar conta"/>
-        </Link>
+        <MainButton buttonText="Criar conta"/>
       </form>
     </div>
   )
