@@ -18,5 +18,7 @@ namespace backend.Models
         [Required(ErrorMessage = "Campo obrigatório")]
         [Range(0, int.MaxValue, ErrorMessage= "Não há produtos em estoque suficiente para realizar a operação")]
         public int Amount { get; set; }
+
+        public int SalesCount { get; set; }
     }
 }

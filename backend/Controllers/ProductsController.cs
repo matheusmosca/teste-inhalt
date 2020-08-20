@@ -26,6 +26,7 @@ namespace backend.Controllers
         public async Task<ActionResult<Product>> Post([FromServices] DataContext context, [FromBody] Product product)
         {
             if (ModelState.IsValid) {
+                product.SalesCount = 0;
                 context.Products.Add(product);
                 await context.SaveChangesAsync();
                 return product;

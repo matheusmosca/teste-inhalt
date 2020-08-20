@@ -12,5 +12,6 @@ namespace backend.Models
         }
 
         public DbSet<Product> Products { get; set; }
+        public DbSet<Sale> Sales { get; set; }
     }
 }
