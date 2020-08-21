@@ -1,0 +1,42 @@
+@import '../../../assets/styles/variables.scss';
+@import '../../../assets/styles/global.scss';
+
+.banner-container {
+  height: 40%;
+  widows: 100%;
+  background-color: $mainPurple;
+  color: white;
+
+  .center-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .text-container {
+      position: absolute;
+      // talvez 29px
+      top: 56px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      
+      .headline {
+        font-size: 2.4rem;
+      }
+
+      .subtitle {
+        margin-top: .3em;
+        font-size: 1.25rem;
+        text-align: center;
+      }
+    }
+  }
+
+  // Temporário
+  .header {
+    a {
+      color: white;
+    }
+  }
+
+}

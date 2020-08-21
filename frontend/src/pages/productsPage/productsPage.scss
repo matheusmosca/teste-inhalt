@@ -1,0 +1,19 @@
+@import '../../assets/styles/variables.scss';
+@import '../../assets/styles/global.scss';
+
+.dashboard-page-container {
+  height: 100vh;
+  position: relative;
+
+  .dashboard-content {
+    background-color: $lightGray;
+    padding: 2.8em 0;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+
+    .dashboard-table {
+      width: 800px;
+    }
+  }
+}

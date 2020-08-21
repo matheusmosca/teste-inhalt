@@ -40,8 +40,10 @@ export function AuthProvider({ children }) {
     history.push('/');
   }
 
+  const authorizationBearer = () => `Bearer ${userToken}`;
+
   return (
-    <authContext.Provider value={{ handleSignIn, userData, userToken, handleSignOut }}>
+    <authContext.Provider value={{ handleSignIn, userData, userToken, handleSignOut, authorizationBearer }}>
       { children }
     </authContext.Provider>
   )
