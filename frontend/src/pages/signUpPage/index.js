@@ -10,7 +10,7 @@ import { SignUpForm } from '../../components/forms/signupform';
 export function SignUpPage() {
   return (
     <div>
-      <Header />
+      <Header hideButton={ true }/>
       <div className="form-container">
         <SignUpForm />
       </div>

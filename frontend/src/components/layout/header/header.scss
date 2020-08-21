@@ -1,9 +1,14 @@
 .header {
   display: flex;
+  justify-content: space-between;
   padding: 0 6em;
   height: 105px;
   widows: 100%;
   align-items: center;
+
+  a {
+    text-decoration: none;
+  }
 
   &__logo {
     font-size: 1.5rem;

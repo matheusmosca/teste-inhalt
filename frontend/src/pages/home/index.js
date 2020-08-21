@@ -10,7 +10,7 @@ import { MainButton } from '../../components/layout/mainButton';
 export function Home() {
   return (
     <div className="home-page">
-      <Header />
+      <Header hideButton={ true }/>
       <div className="main-content">
         <section>
           <div className="headline-container">

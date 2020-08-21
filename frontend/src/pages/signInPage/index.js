@@ -10,7 +10,7 @@ import { SignInForm } from '../../components/forms/signinform';
 export function SignInPage() {
   return (
     <div>
-      <Header />
+      <Header hideButton={ true }/>
       <div className="form-container">
         <SignInForm />
       </div>

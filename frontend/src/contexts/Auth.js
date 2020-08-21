@@ -32,13 +32,16 @@ export function AuthProvider({ children }) {
     }
   }
 
-  // function handleSignOut() {
-  //   setUserData('');
-  //   setUserToken('');
-  // }
+  function handleSignOut() {
+    localStorage.setItem('token', 'null');
+    localStorage.setItem('userData', 'null');
+    setUserData('');
+    setUserToken('');
+    history.push('/');
+  }
 
   return (
-    <authContext.Provider value={{ handleSignIn, userData, userToken }}>
+    <authContext.Provider value={{ handleSignIn, userData, userToken, handleSignOut }}>
       { children }
     </authContext.Provider>
   )

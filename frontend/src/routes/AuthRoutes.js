@@ -1,13 +1,13 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 
-import { ProductsPage } from '../pages/productsPage';
+import { DashboardPage } from '../pages/dashboardPage';
 import { AuthProvider } from '../contexts/Auth';
 
 export function AuthRoutes() {
   return (
     <AuthProvider>
-      <Route exact path="/" component={ ProductsPage }/>
+      <Route exact path="/" component={ DashboardPage }/>
     </AuthProvider>
   )
 }
