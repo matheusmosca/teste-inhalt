@@ -1,0 +1,38 @@
+@import '../../../assets/styles/variables.scss';
+
+.dashboard-navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1em;
+  width: 100%;
+  
+  .navbar-items {
+    width: 520px;
+    display: flex;
+    justify-content: space-between;
+    a {
+      text-decoration: none;
+    }
+    button {
+      width: 160px;
+      height: 50px;
+      font-size: 1.3rem;
+      background-color: $mainPurple;
+
+      &:hover {
+        background-color: $darkPurple;
+      }
+    }
+  }
+
+  .current-option {
+    button {
+      transition: initial;
+      background-color: $lightRed;
+      &:hover { 
+        background-color: $lightRed;
+      }
+    }
+  }
+}

@@ -5,6 +5,7 @@ import './dashboardBanner.scss';
 import { useAuth } from '../../../contexts/Auth';
 
 import { Header } from "../header";
+import { DashboardNavbar } from "../dashboardNavbar";
 
 export function DashboardBanner( ) {
   const { userData: { username } } = useAuth();
@@ -17,6 +18,7 @@ export function DashboardBanner( ) {
           <div className="subtitle">Controle os seus produtos e as suas vendas, e ainda <br/> receba estatísticas sobre o seu negócio</div>
         </div>
       </div>
+      <DashboardNavbar />
     </div>
   )
 }
