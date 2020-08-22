@@ -2,20 +2,22 @@
 @import '../../../assets/styles/global.scss';
 
 .banner-container {
-  height: 40%;
+  height: 280px;
   widows: 100%;
   display: flex;
   flex-direction: column;
   background-color: $mainPurple;
   color: white;
+  position: relative;
 
   .center-text {
+    
     display: flex;
     justify-content: center;
     align-items: center;
     .text-container {
-      // position: absolute;
-      // top: 56px;
+      position: absolute;
+      top: 56px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -33,7 +35,6 @@
     }
   }
 
-  // Temporário
   .header {
     a {
       color: white;

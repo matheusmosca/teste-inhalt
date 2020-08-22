@@ -8,6 +8,8 @@
   width: 100%;
   
   .navbar-items {
+    position: absolute;
+    bottom: 40px;
     width: 520px;
     display: flex;
     justify-content: space-between;

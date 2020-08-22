@@ -4,7 +4,6 @@ import { NavLink } from 'react-router-dom';
 import '../../../assets/styles/global.scss';
 import './dashboardNavbar.scss';
 import { RectangularButton } from '../rectangularButton';
-// import { useAuth } from '../../../contexts/Auth';
 
 export function DashboardNavbar() {
   return (

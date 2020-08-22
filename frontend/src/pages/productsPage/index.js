@@ -69,6 +69,7 @@ export function ProductsPage() {
       { saleProduct && toggle && <PopUpForm product={ saleProduct } toggle={ togglePopUp } refetch={ fetchProductsAgain } /> }
       <DashboardBanner />
       <div className="dashboard-content">
+        <h4 className="dashboard-information">Exibindo os produtos da sua empresa</h4>
         <div className="dashboard-table">
           <MaterialTable
             columns={[

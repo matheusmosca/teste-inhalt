@@ -6,6 +6,7 @@ import { useAuth } from '../../../contexts/Auth';
 
 import { Header } from "../header";
 import { DashboardNavbar } from "../dashboardNavbar";
+import { SearchInput } from "../../searchInput";
 
 export function DashboardBanner( ) {
   const { userData: { username } } = useAuth();
@@ -19,6 +20,7 @@ export function DashboardBanner( ) {
         </div>
       </div>
       <DashboardNavbar />
+      <SearchInput />
     </div>
   )
 }

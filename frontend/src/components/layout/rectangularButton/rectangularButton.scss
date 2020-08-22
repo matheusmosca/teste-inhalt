@@ -11,7 +11,7 @@
   transition: .3s;
 
   &:hover {
-    background-color: black;
+    background-color: $mainPurple;
     color: white;
     cursor: pointer;
   }

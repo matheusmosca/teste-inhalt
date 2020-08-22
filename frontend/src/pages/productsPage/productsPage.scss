@@ -2,17 +2,23 @@
 @import '../../assets/styles/global.scss';
 
 .dashboard-page-container {
-  height: 100vh;
-  position: relative;
 
   .dashboard-content {
+    min-height: 500px;
     background-color: $lightGray;
-    padding: 2.8em 0;
+    padding: 9em 0;
     flex-direction: column;
     display: flex;
     align-items: center;
 
+    .dashboard-information {
+      margin-top: 1em;
+      font-size: 1.4rem;
+      color: #3a3a3a;
+    }
+
     .dashboard-table {
+      margin-top: 2em;
       width: 800px;
     }
   }

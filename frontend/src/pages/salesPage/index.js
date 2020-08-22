@@ -47,6 +47,7 @@ export function SalesPage() {
     <section className="dashboard-page-container">
       <DashboardBanner />
       <div className="dashboard-content">
+        <h4 className="dashboard-information">Exibindo o histórico de vendas</h4>
         <div className="dashboard-table">
           <MaterialTable
             columns={[
