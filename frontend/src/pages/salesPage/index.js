@@ -41,12 +41,10 @@ export function SalesPage() {
     fetchSales();
   }, [authorizationBearer]);
 
-  console.log(sales)
-
   return (
     <section className="dashboard-page-container">
       <DashboardBanner />
-      <div className="dashboard-content">
+      <div className="sales-dashboard-content">
         <h4 className="dashboard-information">Exibindo o histórico de vendas</h4>
         <div className="dashboard-table">
           <MaterialTable
@@ -57,7 +55,7 @@ export function SalesPage() {
             ]}
             data={ sales }
             options={{
-              // search: false,
+              search: false,
               exportButton: true
             }}
             title="Histórico de vendas"

@@ -9,10 +9,13 @@ import '../../assets/styles/global.scss';
 import './productsPage.scss';
 import { DashboardBanner } from '../../components/layout/dashboardBanner';
 import { useAuth } from '../../contexts/Auth';
+import { useSearch } from '../../contexts/Search';
 import { PopUpForm } from '../../components/forms/popupform';
 
 export function ProductsPage() {
   const { authorizationBearer } = useAuth();
+  const { searchValue, filterProducts } = useSearch();
+
   const [products, setProducts] = useState();
   const [saleProduct, setSaleProduct] = useState(null);
   const [toggle, setToggle] = useState(false);
@@ -52,7 +55,7 @@ export function ProductsPage() {
       newProduct, 
       { headers: { Authorization: authorizationBearer() }});
 
-      setProducts([...products, response.data])
+      setProducts([...products, response.data]);
       console.log(response)
     } catch(error) {
       console.log(error);
@@ -66,7 +69,8 @@ export function ProductsPage() {
       { saleProduct && toggle && <PopUpForm product={ saleProduct } toggle={ togglePopUp } refetch={ fetchProductsAgain } /> }
       <DashboardBanner />
       <div className="dashboard-content">
-        <h4 className="dashboard-information">Exibindo os produtos da sua empresa</h4>
+        { !searchValue && <h4 className="dashboard-information">Exibindo os produtos da sua empresa</h4> }
+        { searchValue && <h4 className="dashboard-information">Buscando por { `"${searchValue}"` }</h4> }
         <div className="dashboard-table">
           <MaterialTable
             columns={[
@@ -75,7 +79,7 @@ export function ProductsPage() {
               { title: 'Estoque', field: 'amount', type: 'numeric' },
               { title: 'Vendas', field: 'salesCount', type: 'numeric', editable: "never" }
             ]}
-            data={ products }
+            data={ filterProducts(products) }
             actions={[
               {
                 icon: 'shopping_bag',
@@ -92,7 +96,7 @@ export function ProductsPage() {
               }
             ]}
             options={{
-              // search: false,
+              search: false,
               exportButton: true
             }}
             editable ={{

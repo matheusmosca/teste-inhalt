@@ -7,9 +7,11 @@ import { useAuth } from '../../../contexts/Auth';
 import { Header } from "../header";
 import { DashboardNavbar } from "../dashboardNavbar";
 import { SearchInput } from "../../searchInput";
+import { useLocation } from 'react-router-dom';
 
 export function DashboardBanner( ) {
   const { userData: { username } } = useAuth();
+  let location = useLocation();
   return (
     <div className="banner-container">
       <Header />
@@ -20,7 +22,7 @@ export function DashboardBanner( ) {
         </div>
       </div>
       <DashboardNavbar />
-      <SearchInput />
+      { location.pathname === '/' && <SearchInput /> }
     </div>
   )
 }

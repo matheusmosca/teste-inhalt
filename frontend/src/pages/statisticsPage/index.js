@@ -16,7 +16,6 @@ import { useAuth } from '../../contexts/Auth';
 
 export function StatisticsPage() {
   const { authorizationBearer } = useAuth();
-  const [products, setProducts] = useState()
   const [chartData, setChartData] = useState()
   const [revenue, setRevenue] = useState();
   const [totalSales, setTotalSales] = useState();
@@ -28,7 +27,6 @@ export function StatisticsPage() {
             headers: { Authorization: authorizationBearer() } 
           });
           const data = await response.data;
-          setProducts(data)
           const chartData = formatProductsproducts(data);
           const { revenue, totalSales } = calculateSalesStatistics(data);
 
@@ -62,6 +60,7 @@ export function StatisticsPage() {
                 <StatisticCard title="Total de vendas" value={ totalSales }/>
               </div>
               <div className="chart">
+                <h4>Produtos mais vendidos</h4>
                 <Doughnut data={ chartData } />
               </div>
             </> 
