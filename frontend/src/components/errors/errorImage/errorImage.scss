@@ -1,0 +1,25 @@
+@import "../../../assets/styles/variables.scss";
+
+.error-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 1.6em;
+
+  .dashboard-information {
+    font-size: 1.4rem;
+    color: #3a3a3a;
+  }
+
+
+  .error-message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 320px;
+    width: 100%;
+
+  }
+}

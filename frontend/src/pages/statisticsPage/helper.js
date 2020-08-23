@@ -10,6 +10,8 @@ export function formatProductsproducts(data) {
   const names = array.map((x) => x.name);
   const sales = array.map((x) => x.salesCount);
 
+  const showChart = sales.filter((x) => x > 0);
+
   const chartData = {
     labels: names,
     datasets: [{
@@ -25,7 +27,12 @@ export function formatProductsproducts(data) {
   borderWidth: 1,
     }] 
   }
-  return chartData;
+
+  if (showChart.length === 5 ) {
+    return chartData
+  } else {
+    return null
+  }
 }
 
 export function calculateSalesStatistics(data) {

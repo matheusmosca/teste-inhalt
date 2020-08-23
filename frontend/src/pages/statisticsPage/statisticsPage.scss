@@ -2,15 +2,16 @@
 @import '../../assets/styles/global.scss';
 
 .dashboard-page-container {
-  height: 100vh;
-  position: relative;
+  padding-bottom: 0;
 
-  .dashboard-content {
+  .statistics-dashboard-content {
+    height: calc(100% - 280px);
     background-color: $lightGray;
-    padding: 2.8em 0;
+    padding: 0;
     flex-direction: column;
     display: flex;
     align-items: center;
+    min-height: 400px;
 
     .statistics-content {
       margin-top: 2.8em;
@@ -35,7 +36,7 @@
     }
 
     .dashboard-information {
-      margin-top: 1em;
+      margin-top: 2.8em;
       font-size: 1.4rem;
       color: #3a3a3a;
     }

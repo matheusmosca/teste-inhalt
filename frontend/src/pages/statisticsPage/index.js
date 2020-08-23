@@ -11,10 +11,12 @@ import '../../assets/styles/global.scss';
 import './statisticsPage.scss';
 import { DashboardBanner } from '../../components/layout/dashboardBanner';
 import { StatisticCard } from '../../components/statistics/statisticCard';
+import { ErrorImage } from '../../components/errors/errorImage';
 import { useAuth } from '../../contexts/Auth';
 
 export function StatisticsPage() {
   const { authorizationBearer } = useAuth();
+  const [products, setProducts] = useState()
   const [chartData, setChartData] = useState()
   const [revenue, setRevenue] = useState();
   const [totalSales, setTotalSales] = useState();
@@ -26,12 +28,13 @@ export function StatisticsPage() {
             headers: { Authorization: authorizationBearer() } 
           });
           const data = await response.data;
-          const x = formatProductsproducts(data);
+          setProducts(data)
+          const chartData = formatProductsproducts(data);
           const { revenue, totalSales } = calculateSalesStatistics(data);
 
           setRevenue(revenue);
           setTotalSales(totalSales);
-          setChartData(x)
+          setChartData(chartData)
 
           return data
 
@@ -47,16 +50,24 @@ export function StatisticsPage() {
   return (
     <div className="dashboard-page-container">
       <DashboardBanner />
-      <div className="dashboard-content">
+      <div className="statistics-dashboard-content">
+      { chartData && 
         <h4 className="dashboard-information">Exibindo as estatísticas da sua empresa</h4>
+      }  
         <div className="statistics-content">
-          <div className="cards-container">
-            <StatisticCard title="Total arrecadado" value={ `R$${revenue}` }/>
-            <StatisticCard title="Total de vendas" value={ totalSales }/>
-          </div>
-          <div className="chart">
-            <Doughnut data={ chartData } />
-          </div>
+          { (chartData) ? 
+            <>
+              <div className="cards-container">
+                <StatisticCard title="Total arrecadado" value={ `R$${revenue}` }/>
+                <StatisticCard title="Total de vendas" value={ totalSales }/>
+              </div>
+              <div className="chart">
+                <Doughnut data={ chartData } />
+              </div>
+            </> 
+            : 
+            <ErrorImage errorMessage="Hmm... ainda não há dados para exibir aqui"/>
+          }
         </div>
       </div>
     </div>
