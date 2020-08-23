@@ -1,0 +1,52 @@
+@import '../../assets/styles/variables.scss';
+@import '../../assets/styles/global.scss';
+
+.dashboard-page-container {
+  height: 100vh;
+  position: relative;
+
+  .dashboard-content {
+    background-color: $lightGray;
+    padding: 2.8em 0;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+
+    .statistics-content {
+      margin-top: 2.8em;
+      display: flex;
+
+      width: 700px;
+      .chart {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 490px;
+        height: 100%;
+      }
+
+      .cards-container {
+        display: flex;
+        height: 245px;
+        justify-content: space-between;
+        flex-direction: column;
+      }
+
+    }
+
+    .dashboard-information {
+      margin-top: 1em;
+      font-size: 1.4rem;
+      color: #3a3a3a;
+    }
+
+    .dashboard-table {
+      margin-top: 2em;
+      width: 800px;
+    }
+
+    .dashboard-table {
+      width: 800px;
+    }
+  }
+}

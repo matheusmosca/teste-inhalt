@@ -17,12 +17,9 @@ export function ProductsPage() {
   const [saleProduct, setSaleProduct] = useState(null);
   const [toggle, setToggle] = useState(false);
   const [updateTable, setUpdateTable] = useState(false);
-
+  
   const togglePopUp = () => setToggle(!toggle);
   const fetchProductsAgain = () => setUpdateTable(!updateTable);
-
-  console.log(saleProduct)
-
 
   useEffect(() => {
     const fetchProducts = async () => {

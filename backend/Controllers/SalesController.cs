@@ -41,7 +41,7 @@ namespace backend.Controllers
                 {
                     // Atualiza o estoque e o numero de vendas do produto
                     product.Amount = product.Amount - sale.Amount;
-                    product.SalesCount++;
+                    product.SalesCount = product.SalesCount + sale.Amount;
                     context.Products.Update(product);
                     await context.SaveChangesAsync();
 
