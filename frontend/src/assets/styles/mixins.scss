@@ -19,3 +19,15 @@ $desktop-width: 1024px;
     @content;
   }
 }
+
+@mixin adjustImage {
+  @media (max-width: #{1210px}) {
+    @content;
+  }
+}
+
+@mixin largeTablet {
+  @media (max-width: #{800px}) {
+    @content;
+  }
+}

@@ -1,25 +1,83 @@
 @import '../../assets/styles/variables.scss';
+@import '../../assets/styles/mixins.scss';
 
 .home-page {
   height: calc(100% - 104px);
+  header {
+    @include largeSmartPhone {
+        justify-content: center;
+        align-items: center;
+      }
+  }
 
   .main-content {
-    padding-left: 6em;
+    padding-left: 4em;
     height: 100%;
+
+    @include smallDesktop {
+      padding-left: 2.5em;
+      
+    }
+    @include largeTablet{
+      padding-left: 0em;
+
+    }
 
     section {
       display: flex;
       align-items: center;
       justify-content: space-between;
       height: 100%;
+      position: relative;
+
+      @include largeTablet {
+        flex-direction: column-reverse;
+        position: initial;
+        justify-content: center;
+      }
+
 
       .headline-container {
-        width: 440px;
-        height: 70%;
+        width: 420px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        margin-bottom: 6em;
     
+        @include adjustImage {
+          width: 370px;
+          
+        }
+        @include smallDesktop {
+          width: 320px;
+        }
+
+        @include largeTablet {
+          width: 88%;
+          margin-bottom: .4em;
+        }
+
         h1 {
           font-weight: 900;
-          font-size: 2.5rem;
+          font-size: 2.3rem;
+
+          @include adjustImage {
+            line-height: 1.4em;
+            font-size: 2.1rem;
+          }
+          @include smallDesktop {
+            font-size: 1.8rem;
+          }
+          @include largeTablet {
+            font-size: 2rem;
+            text-align: center;
+          }
+    
+          @include largeSmartPhone{
+            font-size: 1.7rem;
+          }
     
           span {
             color: $darkPurple;
@@ -29,26 +87,87 @@
         h4 {
           margin: .8em 0;
           font-weight: 300;
-          font-size: 1.35rem;
+          font-size: 1.2rem;
+
+          @include smallDesktop {
+            font-size: 1.1rem;
+          }
+
+          @include largeTablet {
+            font-size: 1.3rem;
+            text-align: center;
+          }
+          @include largeSmartPhone{
+            font-size: 1.2rem;
+            text-align: center;
+          }
         }
 
         .buttons-container {
-          width: 94%;
+          width: 100%;
           display: flex;
           justify-content: space-between;
+
+          @include largeTablet {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            button {
+              &:nth-child(1) {
+                margin-bottom: .3em;
+                margin-top: .1em;
+              }
+
+            }
+          }
+          .main-button {
+            @include adjustImage {
+              width: 176px;
+            }
+            @include smallDesktop {
+              width: 150px;
+            }
+            @include largeTablet{
+              width: 250px;
+            }
+          }
         }
       }
     
       .illustration {
-        width: calc(100% - 440px);
+        position: absolute;
+        right: 0;
+        bottom: 48px;
+        width: calc(100% - 420px);
         height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
+
+        @include adjustImage {
+          width: calc(100% - 370px);
+        }
+
+        @include smallDesktop {
+          width: calc(100% - 320px);
+        }
+
+        @include largeTablet {
+          flex-direction: column;
+          position: initial;
+          width: 95%;
+          max-height: 310px;
+        }
     
         img {
-          width: 85%;
-          height: 85%;
+          width: 93%;
+          height: 93%;
+
+          @include largeSmartPhone {
+            width: 98%;
+            height: 98%;
+          }
         }
       }
     }
