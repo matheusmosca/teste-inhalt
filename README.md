@@ -11,7 +11,7 @@ Esta aplicação foi construída para o processo seletivo de estágio na Inhalt,
 * Busca de produtos pelo título;
 * Venda de produtos (com controle e validação de estoque);
 * Histórico de vendas (Bônus);
-* Export de vendas e produtos para PDF e CSV (Bônus);
+* Export dos dados das vendas e produtos para PDF e CSV (Bônus);
 * Estatísticas das vendas (Bônus);
 
 ## Tecnologias utilizadas
@@ -33,7 +33,7 @@ Esta aplicação foi construída para o processo seletivo de estágio na Inhalt,
 * Como a API foi construída utilizando um banco de dados InMemory, a reinicialização da mesma acarreta na perda dos dados registrados;
 
 ## Procedimentos para rodar a aplicação localmente
-Primeiramente baixe o repositório
+Primeiramente, baixe o repositório
 ```zsh
   git clone https://github.com/matheusmosca/teste-inhalt.git
   cd teste-inhalt

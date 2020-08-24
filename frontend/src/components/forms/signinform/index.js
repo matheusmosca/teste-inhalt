@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import '../../../assets/styles/global.scss';
-import './signInForm.scss';
+import '../signupform/signUpForm.scss';
 
 import { useAuth } from '../../../contexts/Auth';
 import { MainButton } from "../../layout/mainButton";

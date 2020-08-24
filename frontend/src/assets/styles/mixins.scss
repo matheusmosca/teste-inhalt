@@ -1,0 +1,14 @@
+$small-smartphone-width: 310px;
+$large-smartphone-width: 400px;
+
+@mixin largeSmartPhone {
+  @media (max-width: #{$large-smartphone-width}) {
+    @content;
+  }
+}
+
+// @mixin smallSmartPhone {
+//   @media (max-width: #{$small-smartphone-width}) {
+//     @content;
+//   }
+// }
