@@ -1,10 +1,22 @@
+@import '../../../assets/styles/mixins.scss';
+
 .header {
   display: flex;
   justify-content: space-between;
   padding: 0 6em;
   height: 104px;
-  widows: 100%;
+  width: 100%;
   align-items: center;
+
+  @include smallDesktop {
+    padding: 2.5em 2.3em;
+    height: 72px;
+  }
+
+  @include largeSmartPhone {
+    padding: 0 1.33em;
+    height: 72px;
+  }
 
   a {
     text-decoration: none;

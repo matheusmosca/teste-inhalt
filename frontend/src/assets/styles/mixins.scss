@@ -1,5 +1,6 @@
 $small-smartphone-width: 310px;
 $large-smartphone-width: 400px;
+$desktop-width: 1024px;
 
 @mixin largeSmartPhone {
   @media (max-width: #{$large-smartphone-width}) {
@@ -7,8 +8,14 @@ $large-smartphone-width: 400px;
   }
 }
 
-// @mixin smallSmartPhone {
-//   @media (max-width: #{$small-smartphone-width}) {
-//     @content;
-//   }
-// }
+@mixin smallSmartPhone {
+  @media (max-width: #{$small-smartphone-width}) {
+    @content;
+  }
+}
+
+@mixin smallDesktop {
+  @media (max-width: #{$desktop-width}) {
+    @content;
+  }
+}
