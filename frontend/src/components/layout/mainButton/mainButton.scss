@@ -5,13 +5,16 @@
   color: white;
   padding: .5em;
   border: none;
-  border-radius: .2em;
+  border-radius: .1em;
+  // border: 3px solid white;
+  background-color: $cardPurple;
   font-weight: 900;
   width: 190px;
   font-size: 1.42rem;
+  transition: .4s;
 
   &:hover {
-    background-color: black;
+    background-color: #4e0d9c;
     color: white;
     cursor: pointer;
   }
