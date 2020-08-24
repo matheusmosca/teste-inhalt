@@ -59,7 +59,7 @@ export function StatisticsPage() {
                 <StatisticCard title="Total arrecadado" value={ `R$${revenue}` }/>
                 <StatisticCard title="Total de vendas" value={ totalSales }/>
               </div>
-              <div className="chart">
+              <div className="chart-container">
                 <h4>Produtos mais vendidos</h4>
                 <Doughnut data={ chartData } />
               </div>

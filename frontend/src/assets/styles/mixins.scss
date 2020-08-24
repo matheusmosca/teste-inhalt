@@ -55,3 +55,9 @@ $desktop-width: 1024px;
     @content;
   }
 }
+
+@mixin statisticsPageBreak {
+  @media (max-width: #{740px}) {
+    @content;
+  }
+}
