@@ -13,6 +13,7 @@ Esta aplicação foi construída para o processo seletivo de estágio na Inhalt,
 * Histórico de vendas (Bônus);
 * Export dos dados das vendas e produtos para PDF e CSV (Bônus);
 * Estatísticas das vendas (Bônus);
+* Design responsivo (Bônus);
 
 ## Tecnologias utilizadas
 ### Front-end:
