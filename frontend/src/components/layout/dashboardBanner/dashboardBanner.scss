@@ -1,5 +1,6 @@
 @import '../../../assets/styles/variables.scss';
 @import '../../../assets/styles/global.scss';
+@import '../../../assets/styles/mixins.scss';
 
 .banner-container {
   height: 270px;
@@ -11,7 +12,6 @@
   position: relative;
 
   .center-text {
-    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,16 +25,35 @@
       
       .headline {
         font-size: 2.4rem;
+
+        @include adjustSearchBar {
+          font-size: 2.1rem;
+        }
+        @include largeSmartPhone {
+          margin-top: .3em;
+          font-size: 1.9rem;
+        }
       }
 
       .subtitle {
         margin-top: .3em;
         font-size: 1.25rem;
         text-align: center;
+
+        @include tableBreak {
+          font-size: 1.18rem;
+          line-height: 1.5em;
+        }
+        @include adjustSearchBar {
+          font-size: 1rem;
+        }
+        @include largeSmartPhone {
+          font-size: .95rem;
+          width: 95%;
+        }
       }
     }
   }
-
   .header {
     a {
       color: white;

@@ -1,7 +1,9 @@
 @import '../../assets/styles/variables.scss';
 @import '../../assets/styles/global.scss';
+@import '../../assets/styles/mixins.scss';
 
 .dashboard-page-container {
+  background-color: $lightGray;
 
   .dashboard-content {
     min-height: 500px;
@@ -15,11 +17,27 @@
       margin-top: 1em;
       font-size: 1.4rem;
       color: #3a3a3a;
+      text-align: center;
+
+      @include extraLargePhone {
+        font-size: 1.2rem;
+        width: 90%;
+      }
     }
 
     .dashboard-table {
       margin-top: 2em;
       width: 800px;
+
+      @include tableBreak {
+        width: 570px;
+      }
+      @include adjustSearchBar {
+        width: 468px;
+      }
+      @include extraLargePhone {
+        width: 92%;
+      }
     }
   }
 }

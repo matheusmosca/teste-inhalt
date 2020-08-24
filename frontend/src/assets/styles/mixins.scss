@@ -31,3 +31,21 @@ $desktop-width: 1024px;
     @content;
   }
 }
+
+@mixin tableBreak {
+  @media (max-width: #{850px}) {
+    @content;
+  }
+}
+
+@mixin adjustSearchBar {
+  @media (max-width: #{600px}) {
+    @content;
+  }
+}
+
+@mixin extraLargePhone {
+  @media (max-width: #{500px}) {
+    @content;
+  }
+}

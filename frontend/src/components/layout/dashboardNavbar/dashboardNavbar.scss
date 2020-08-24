@@ -1,4 +1,5 @@
 @import '../../../assets/styles/variables.scss';
+@import '../../../assets/styles/mixins.scss';
 
 .dashboard-navbar {
   display: flex;
@@ -13,6 +14,20 @@
     width: 520px;
     display: flex;
     justify-content: space-between;
+    
+    @include adjustSearchBar {
+      margin-bottom: -.6em;
+    }
+    @include tableBreak {
+      width: 415px;
+    }
+    @include adjustSearchBar {
+      width: 320px;
+    }
+    @include largeSmartPhone {
+      width: 265px;
+    }
+    
     a {
       text-decoration: none;
     }
@@ -22,6 +37,23 @@
       font-size: 1.3rem;
       background-color: $mainPurple;
 
+      @include tableBreak {
+        width: 120px;
+        font-size: 1.05rem;
+        height: 46px;
+      }
+      @include adjustSearchBar {
+        width: 94px;
+        font-weight: initial;
+        font-size: .95rem;
+        height: 38px;
+      }
+      @include largeSmartPhone {
+        width: 85px;
+        font-size: .87rem;
+        height: 37px;
+      }
+      
       &:hover {
         background-color: $darkPurple;
       }
