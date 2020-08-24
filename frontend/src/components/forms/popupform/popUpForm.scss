@@ -1,5 +1,6 @@
 @import "../../../assets/styles/variables.scss";
 @import "../../../assets/styles/global.scss";
+@import "../../../assets/styles/mixins.scss";
 
 .popup-form-container {
   position: fixed;  
@@ -28,6 +29,13 @@
     margin: auto;
     width: 310px;
     height: 378px;
+
+    @include popUpBreak {
+      width: 94%;
+      height: 350px;
+      padding: 1.7em 1.2em;
+      max-height: 400px;
+    }
   
     .popup-form-content {
       width: 100%;
@@ -42,6 +50,10 @@
         font-size: 1.4rem;
         margin-bottom: .8em;
         line-height: 1.3em;
+
+        @include popUpBreak {
+          font-size: 1.05rem;
+        }
         span {
           font-weight: bold;
         }
@@ -49,8 +61,13 @@
   
       .buttons-container {
         width: 100%;
-  
+      
         button {
+          border: none;
+          width: 100%;
+          font-size: 1.6rem;
+          height: 55px;
+
           &:nth-child(1) {
             background-color: $mainPurple;
             margin-bottom: .3em;
@@ -67,10 +84,6 @@
               background-color: #f54141;
             }
           }
-          border: none;
-          width: 100%;
-          font-size: 1.6rem;
-          height: 55px;
         }
       }
   
@@ -78,8 +91,11 @@
         width: 100%;
         margin-top: .6em;
         margin-bottom: .9em;
-        label {
+        label {          
           color: #4F4F4F;
+          @include popUpBreak {
+            font-size: .9rem;          
+          }
         }
         input {
           width: 100%;

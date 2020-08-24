@@ -49,3 +49,9 @@ $desktop-width: 1024px;
     @content;
   }
 }
+
+@mixin popUpBreak {
+  @media (max-width: #{340px}) {
+    @content;
+  }
+}
