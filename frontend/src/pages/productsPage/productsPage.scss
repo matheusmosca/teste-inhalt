@@ -4,6 +4,7 @@
 
 .dashboard-page-container {
   background-color: $lightGray;
+  overflow-x: hidden;
 
   .dashboard-content {
     min-height: 500px;
