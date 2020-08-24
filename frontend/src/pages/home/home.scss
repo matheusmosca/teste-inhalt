@@ -57,6 +57,14 @@
         @include largeTablet {
           width: 88%;
           margin-bottom: .4em;
+          justify-content: flex-start;
+          margin-top: 1.8em;
+        }
+        @include largeSmartPhone{
+          width: 88%;
+          margin-bottom: .4em;
+          justify-content: flex-start;
+          margin-top: .5em;
         }
 
         h1 {
