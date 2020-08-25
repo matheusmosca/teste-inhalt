@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import swal from 'sweetalert';
 
 import MaterialTable from 'material-table'
 
@@ -46,7 +47,7 @@ export function ProductsPage() {
 
   async function createProduct(newProduct) {
     if(newProduct.price < 0 || newProduct.amount < 0) {
-      alert("Preços e estoques não podem ser negativos")
+      swal("Operação inválida", "Preços e estoques não podem ser negativos", "warning");
       return
     }
     try {
@@ -59,7 +60,7 @@ export function ProductsPage() {
       console.log(response)
     } catch(error) {
       console.log(error);
-      alert("campos preenchidos incorretamente");
+      swal("Erro", "Campos preenchidos incorretamente.", "error")
       return error.response
     }
   }
@@ -86,7 +87,7 @@ export function ProductsPage() {
                 tooltip: 'Vender produto',
                 onClick: (event, rowData) => { 
                   if(rowData.amount <= 0) {
-                    alert("Produto esgotado")
+                    swal("Operação inválida", "Produto esgotado.", "warning")
                     return
                   }
                   setSaleProduct({ ...rowData });

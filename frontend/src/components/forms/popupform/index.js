@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import swal from 'sweetalert';
 import { api } from '../../../services/api';
 import { useAuth } from "../../../contexts/Auth";
 
@@ -16,11 +17,11 @@ export function PopUpForm({ product, toggle, refetch }) {
   async function handleProductSale(e) {
     e.preventDefault();
     if (amount <= 0) {
-      alert("A quantidade deve ser maior que zero")
+      swal("Operação inválida", "A quantidade deve ser maior que zero", "warning")
       return;
     }
     if (availableAmount < amount || availableAmount === 0) {
-      alert("Não há produtos em estoque o suficiente.")
+      swal("Operação inválida", "Não há produtos em estoque o suficiente.", "warning")
       return;
     }
     try {
@@ -32,7 +33,8 @@ export function PopUpForm({ product, toggle, refetch }) {
       refetch()
     } catch(error) {
       console.log(error.response);
-      alert("Campo preenchido incorretamente")
+      swal("Erro", "Campo preenchido incorretamente.", "error");
+
     }
 
   }

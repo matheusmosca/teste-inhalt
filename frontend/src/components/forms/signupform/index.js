@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
+import swal from 'sweetalert';
 
 import { api } from '../../../services/api';
 
@@ -18,7 +19,7 @@ export function SignUpForm() {
   async function handleSignUpForm(e) {
     e.preventDefault();
     if (password !== repeatPassword) {
-      alert("As senhas não coincidem. Tente novamente.")
+      swal("Erro", "As senhas não coincidem, tente novamente", "error");
       return;
     }
     console.log(username, password)
@@ -29,7 +30,7 @@ export function SignUpForm() {
       });
 
       console.log(response)
-      alert("Sua conta foi criada com sucesso. Realize o login")
+      swal("Operação concluída", "Sua conta foi criada com sucesso. Realize o login", "success");
       history.push("/signin")
       return response
     } catch(error) {

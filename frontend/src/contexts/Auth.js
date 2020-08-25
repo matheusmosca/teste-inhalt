@@ -1,5 +1,6 @@
 import React, { createContext, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
+import swal from 'sweetalert';
 
 import { api } from '../services/api';
 import { useLocalStorage } from '../hooks/useLocalStorage';
@@ -27,7 +28,7 @@ export function AuthProvider({ children }) {
 
     } catch(error) {
       console.log(error);
-      alert("Credenciais incorretas")
+      swal("Erro", "Credenciais incorretas, tente novamente", "error");
       return error.response;
     }
   }
